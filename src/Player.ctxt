@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=inF
+comment0.target=Player(java.lang.String)
+comment1.params=
+comment1.target=int[]\ rollDice()
+comment2.params=
+comment2.target=int[]\ getDice()
+comment3.params=
+comment3.target=void\ setDice()
+comment4.params=
+comment4.target=int\ getNumDice()
+comment5.params=inNum
+comment5.target=void\ setNumDice(int)
+comment6.params=
+comment6.target=java.lang.String\ getName()
+comment7.params=
+comment7.target=int\ getScore()
+comment8.params=inScore\ inFark
+comment8.target=void\ setScore(int,\ boolean)
+numComments=9
