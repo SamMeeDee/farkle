@@ -34,6 +34,7 @@ public class DiceGame
 	    int [] scores = {0,100,50,1000,200,300,400,500,600};
 	    boolean [] scorable  = new boolean [9];
 	    Arrays.fill(scorable, Boolean.FALSE);
+	    String[] choices;
 	    String [] scoreChoices = {"", "1. Each 1 ------ 100 points",
 	                                  "2. Each 5 ------ 50 points",
 	                                  "3. Three 1's --- 1000 points",
@@ -44,6 +45,16 @@ public class DiceGame
 	                                  "8. Three 6's --- 600 points",};
 	    
 	    for (int x = 0; x < dice.length; x++) {counter[dice[x]]++;}
+	    
+	    if (counter[1] == 2)
+	    {
+	        scores[1] = 200;
+	    } 
+	    
+	    if (counter[5] == 2)
+	    {
+	        scores[2] = 100;
+	    }  
 	    
 	    for (int x = 1; x < 7; x++)
 	    {
@@ -94,23 +105,23 @@ public class DiceGame
 	    
 	    for (int x = 1; x < 9; x++)
 	    {
-	    	if (scorable[x] = true)
+	    	if (scorable[x] == true)
 	    	{
 	    		System.out.println(scoreChoices[x]);
 	    	}
 	    }
 	    
-	    System.out.println("Enter the number/numbers of the options you wish to choose."+
+	    System.out.print("Enter the number/numbers of the options you wish to choose."+
 	    		           "\nIf you make multiple selections, seperate each choice by "+
-	    		           "\na space.");
-	    stok = new StringTokenizer(keyboard.nextLine());
+	    		           "\na space: ");
+	    choices = keyboard.nextLine().split("\\s");
 	    
-	    int [] userChoices = new int [stok.countTokens()];
+	    int [] userChoices = new int [choices.length];
 	    int foo;
 	    
-	    for (int x = 0; x < stok.countTokens(); x++)
+	    for (int x = 0; x < choices.length; x++)
 	    {
-	    	foo = Integer.parseInt(stok.nextToken());
+	    	foo = Integer.parseInt(choices[x]);
 	        userChoices[x] = foo;
 	    }
 	    for (int x = 0; x < userChoices.length; x++)
@@ -125,19 +136,19 @@ public class DiceGame
 	        switch (userChoices[x])
 	        {
 	            case 1:
-	            numDice =- counter[1];
+	            numDice -= counter[1];
 	            break;
 	            
 	            case 2:
-	            numDice =- counter[2];
+	            numDice -= counter[2];
 	            break;
 	            
 	            case 3:
-	            numDice =- counter[1];
+	            numDice -= counter[1];
 	            break;
 	            
 	            case 4:
-	            numDice =- counter[2];
+	            numDice -= counter[2];
 	            break;
 	            
 	            case 5:
@@ -145,15 +156,15 @@ public class DiceGame
 	            break;
 	            
 	            case 6:
-	            numDice =- counter[4];
+	            numDice -= counter[4];
 	            break;
 	            
 	            case 7:
-	            numDice =- counter[5];
+	            numDice -= counter[5];
 	            break;
 	            
 	            case 8:
-	            numDice =- counter[6];
+	            numDice -= counter[6];
 	            break;
 	        }
 	    }
@@ -163,7 +174,7 @@ public class DiceGame
 	public boolean checkHotDice(int [] dice)
 	{
 	    hotScore = 0;
-	    StringTokenizer stok;
+	    String[] choices;
 	    int numDice1 = dice.length;
 	    int count = 1;
 		int [] counter = {0,0,0,0,0,0,0};
@@ -172,6 +183,16 @@ public class DiceGame
 	    Arrays.fill(scorable, Boolean.FALSE);
 	    
 	    for (int x = 0; x < dice.length; x++) {counter[dice[x]]++;}
+	    
+	    if (counter[1] == 2)
+	    {
+	        scores[1] = 200;
+	    } 
+	    
+	    if (counter[5] == 2)
+	    {
+	        scores[2] = 100;
+	    }
 	    
 	    for (int x = 1; x < 7; x++)
 	    {
@@ -220,22 +241,22 @@ public class DiceGame
 	    
 	    StringBuilder allChoices = new StringBuilder("");
 	    
-	    for (int x = 0; x < 9; x++)
+	    for (int x = 1; x < 9; x++)
 	    {
-	        if (scorable[x] = true)
+	        if (scorable[x] == true)
 	        {
-	           allChoices.append(" "+x);
+	           allChoices.append(x+" ");
 	        }   
 	    }
 	    
-	    stok = new StringTokenizer(allChoices.toString());
+	    choices = allChoices.toString().split("\\s");
 	    
-	    int [] userChoices = new int [stok.countTokens()];
+	    int [] userChoices = new int [choices.length];
 	    int foo;
 	    
-	    for (int x = 0; x < stok.countTokens(); x++)
+	    for (int x = 0; x < choices.length; x++)
 	    {
-	    	foo = Integer.parseInt(stok.nextToken());
+	    	foo = Integer.parseInt(choices[x]);
 	        userChoices[x] = foo;
 	    }
 	    for (int x = 0; x < userChoices.length; x++)
@@ -248,35 +269,35 @@ public class DiceGame
 	        switch (userChoices[x])
 	        {
 	            case 1:
-	            numDice1 =- counter[1];
+	            numDice1 -= counter[1];
 	            break;
 	            
 	            case 2:
-	            numDice1 =- counter[2];
+	            numDice1 -= counter[2];
 	            break;
 	            
 	            case 3:
-	            numDice1 =- counter[1];
+	            numDice1 -= counter[1];
 	            break;
 	            
 	            case 4:
-	            numDice1 =- counter[2];
+	            numDice1 -= counter[2];
 	            break;
 	            
 	            case 5:
-	            numDice1 =- counter[3];
+	            numDice1 -= counter[3];
 	            break;
 	            
 	            case 6:
-	            numDice1 =- counter[4];
+	            numDice1 -= counter[4];
 	            break;
 	            
 	            case 7:
-	            numDice1 =- counter[5];
+	            numDice1 -= counter[5];
 	            break;
 	            
 	            case 8:
-	            numDice1 =- counter[6];
+	            numDice1 -= counter[6];
 	            break;
 	        }
 	    }

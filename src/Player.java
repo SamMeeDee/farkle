@@ -55,10 +55,9 @@ public class Player
 		return score;
 	}
 	
-	public void setScore (int inScore, boolean inFark)
+	public void setScore (int inScore)
 	{
-		if (inFark = true){score = 0;}
-	    else{score =+ inScore;}
+		score = inScore;
 	}
 
 }
