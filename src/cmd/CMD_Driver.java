@@ -1,11 +1,15 @@
 package cmd;
 
+import main.Player;
+import java.util.*;
+import java.io.*;
+
 public class CMD_Driver 
 {
 	public static void main(String[] args) 
 	{
 	    Player p1, p2;
-	    DiceGame game = new DiceGame();
+	    CMD_DiceGame game = new CMD_DiceGame();
 	    int playAgain;
 	    boolean playAgain1 = true;
 	    int p1Choice, p2Choice;
@@ -140,7 +144,7 @@ public class CMD_Driver
 		System.out.println("\n1. Play again"+
 		                   "\n2. End the game"+"\nEnter your choice: ");
 		playAgain = keyboard.nextInt();
-    } while (playAgain == 1 || playAgain == 2);
+    } while (playAgain != 1 && playAgain != 2);
 		            
 	if (playAgain == 1){playAgain1 = true; p1.setScore(0); p2.setScore(0); continue;}
 	else if (playAgain == 2){playAgain1 = false; continue;}
