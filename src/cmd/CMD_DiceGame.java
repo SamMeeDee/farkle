@@ -1,6 +1,6 @@
-import java.util.*;
-import java.io.*;
-public class DiceGame 
+package cmd;
+
+public class CMD_DiceGame 
 {
 	int numDice;
 	int hotScore;
@@ -317,5 +317,4 @@ public class DiceGame
     public void resetHotScore() {hotScore = 0;}
     
     public int reCountDice(){return numDice;}
-}    
-    
+}
