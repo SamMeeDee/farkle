@@ -1,15 +1,14 @@
 package cmd;
 
 import java.util.*;
-import java.io.*;
-import default.Player;
+
 
 public class CMD_DiceGame 
 {
 	int numDice;
 	int hotScore;
 	
-	public DiceGame(){numDice = 0; hotScore = 0;}
+	public CMD_DiceGame(){numDice = 0; hotScore = 0;}
     
     public boolean checkFarkle (int [] dice)
 	{
@@ -172,6 +171,7 @@ public class CMD_DiceGame
 	            break;
 	        }
 	    }
+	    keyboard.close();
         return score;	
 	}
 	
@@ -180,7 +180,7 @@ public class CMD_DiceGame
 	    hotScore = 0;
 	    String[] choices;
 	    int numDice1 = dice.length;
-	    int count = 1;
+	    //int count = 1;
 		int [] counter = {0,0,0,0,0,0,0};
 	    int [] scores = {0,100,50,1000,200,300,400,500,600};
 	    boolean [] scorable  = new boolean [9];
